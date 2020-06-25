@@ -1,0 +1,22 @@
+
+1. Kreirati Web Shop kroz:
+a) servletsku tehnologiju, a onda kroz
+b) JSP i nakon toga kroz
+c) JSF
+
+2. Baza će biti .txt. Jedna linija će biti jedan proizvod:
+ID, NAZIV, CIJENA
+1; Samsung LED TV; 1300KM
+
+3. Dijelovi aplikacije
+a) Login
+b) Pregled proizvoda učitanih u application objekat/repozitorij (ServletContext) iz baze, kako
+    bi korisnici brže dolazili do informacija (ne izlistavaju se svaki put iz baze)
+c) Omogućiti dodavanje proizvoda
+d) Prikaz proizvoda u korpi
+
+3. shop-> WebShopServlet -> 
+   WebPages -> products.txt
+
+4. Obavezno objasniti detalje iz web.xml klase
+
