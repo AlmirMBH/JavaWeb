@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Druga WEB aplikacija</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h4>Dobrodošli/Welcome!!!</h4>        
+        <hr/>
+        <a href="HttpZaglavlje">Analiza HTTP zahtjeva</a>
+        <hr/>
+        <a href="visitCounter">Broj posjeta</a>
+        <hr>
+        
+        <!-- Objasniti razliku između GET i POST
+        GET šalje podatke u HTTP zahtjevu (u zaglavlju) i vidljivi su u URL-u.
+        POST metoda podatke šalje u body-ju i nisu vidljivi u URL-u-->
+        
+        <h5>Forma za pristup web shop-u</h5>        
+        <form method="POST" action="shop" >
+            <input type="text" name="username" />
+            <input type="password" name="password" />
+            <input type="submit" value="Login" />            
+        </form>
+    </body>
+</html>

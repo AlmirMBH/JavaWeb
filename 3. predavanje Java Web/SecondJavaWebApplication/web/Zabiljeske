@@ -1,0 +1,49 @@
+
+WEB
+
+1. Suština servleta je da obrađuju sve zahtjeve koji dođu od browsera. Pasivni su i šalju odgovor 
+   tek nakon što ga klijenti iniciraju. Zahtjevi se obrađuju pomoću dvije klase 
+   HTTPServletRequest i HTTPServletResponse 
+
+2. Nakon requesta, u lekciji 2 smo u browser pisali HTML sadržaj pomoću metode 
+   response.getWriter() -> out.println("<html>") iz ServletResponse klase.
+
+3. Browser koristi HTTP protokol i internet mrežu da kontaktira naš server. HTTP Protokol radi po
+   principu request/response. Svaki request/response je neovisan od prethodnog.
+   Svaki put kad uradimo refresh, šalje se request i dobija response.
+
+4. SecondJavaWebApplication -> paket header i u njemu servlet "HttpAttributeTestServlet" koji
+   uzima sve iz zaglavlja i šalje nazad korisniku aplikacije.
+
+5. Servlet je klasa čiji objekat mi nećemo kreirati (ne pozivamo konstruktor). Kreirat će ga 
+   servletski kontejner, koji vodi računa o ciklusu postojanja servleta. Mi ćemo samo 
+   implementirati DOGET i DOPOST metode (ponekad se koriste INIT i DESTROY) u index.html.
+   Za svaki servlet kreira se jedan objekat.
+
+6. Svi klijenti dijele jedan servlet objekat. Zbog toga postoje sigurni repozitoriji na nivou
+   aplikacije (po principu mape key-value) koji nam omogućavaju da:
+    
+   a) pristupimo objektima na NIVOU APLIKACIJE. Taj objekat je ServletContext, često se zove
+      application objekat zato što u njega možemo snimati podatke preko setAttribute("nekoIme").
+      Svi servleti na nivou aplikacije dijele jedan objekat. U suštini je singleton, odnosno
+      sigurno 'skladište' jer se podaci ne moraju svaki put isčitavati iz baze
+
+   b) na nivou SESIJE. HttpSession objekat (stateless request/response) dobijen iz request objekta
+      request.getHttpSession(). Unutar session objekta su snimljeni svi podaci vezani samo za 
+      jednog korisnika (tj. npr. 4 korisnika = 4 objekta). Jedan od načina da se prati sesija je
+      preko cookies, upisuje se u session objekat. Cookie je kao heširana vrijednost ili string
+      od 20-30 karaktera na osnovu koje aplikacija prepoznaje korisnike. Cookie se dodjeljuje 
+      nakon prvog slanja zahtjeva, a onda se u svakom narednom zahtjevu pored zahtjeva browser
+      šalje i cookie. Ukoliko korisnik ne prihvati cookie, koristi se url re-writing tj. 
+      dodavanje stringa (hash) na url zahtjeva
+      (npr. http://www.myserver.com/index.html;jsessionid=123).
+
+   c) Na nivou VIEW tj. na nivou WEB STRANICE. 
+
+   d) Na nivou ZAHTJEVA ('najniži objekti'). Žive sve dok je aktivna obrada request/response
+      zahtjeva, a onda ga Garbage collector uništava.
+      
+7. Kreiranje paketa login, a onda WebShop Servlet koji se targetria iz forme iz klase index.html
+
+
+
