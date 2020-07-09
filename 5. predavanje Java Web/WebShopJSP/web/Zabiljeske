@@ -1,0 +1,12 @@
+
+1. Predefinisane promjenjive
+    Ime promjenjive           Tip Promjenjive
+
+a)     request               HttpServletRequest
+b)     response              HttpServletResponse
+c)     out                   JspWriter
+d)     session               HttpSession
+e)     application           ServletContext
+f)     config                ServletConfig
+g)     pageContext           PageContext
+h)     page                  (this)

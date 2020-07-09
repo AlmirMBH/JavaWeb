@@ -1,0 +1,19 @@
+
+1. Kad otvorimo SKRIPLET, unutar njega pišemo kodove i to je kao da ih smještamo u doGet i
+   doPost metode (servletski kod; process request)
+
+2. JSP se uvijek prevodi u servlet, koji opslužuje sve korisnike
+
+2. REQUEST-RESPONSE PROCES: Nakon unošenja korisničkog imena i lozinke u LOGIN.JSP, šalje se 
+   request u POZDRAV.JSP (definisano login formom). Kada zahtjev dođe, kreira se objekat "user" 
+   (id="user"), po šablonu klase "UserBean" (class="UserBean"; poziva se konstruktor bez
+   parametara iz klase UserBean), a korisnik se pamti dok je u sesiji (scope="session"), ali
+   u polja objekta nisu ubačene vrijednosti, što se dodaje u sljedećoj liniji koda (POZDRAV.JSP).
+   Postavljaju se osobine za objekat user (name="user"). Za polje username (property="username")
+   postavlja se parametar koji si dobio iz forme (param="korisnickoIme"), a isto važi i za lozinku.
+
+3. JSP generiše sadržaj (html) nakon upita i setuje vrijednost polja za validaciju, tj. u 
+   pozdrav.jsp poziva se funkcija login() iz UserBean klase.
+   
+
+
